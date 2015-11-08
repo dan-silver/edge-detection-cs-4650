@@ -1,4 +1,4 @@
-# Install script for directory: /home/dan/Desktop/4650/histograms
+# Install script for directory: /home/dan/Desktop/4650/assignment4_edges
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dan/Desktop/4650/histograms/bin/src/cmake_install.cmake")
+  include("/home/dan/Desktop/4650/assignment4_edges/bin/src/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dan/Desktop/4650/histograms/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dan/Desktop/4650/assignment4_edges/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

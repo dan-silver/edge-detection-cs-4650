@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dan/Desktop/4650/histograms
+CMAKE_SOURCE_DIR = /home/dan/Desktop/4650/assignment4_edges
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dan/Desktop/4650/histograms/bin
+CMAKE_BINARY_DIR = /home/dan/Desktop/4650/assignment4_edges/bin
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/histograms/bin/CMakeFiles /home/dan/Desktop/4650/histograms/bin/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/assignment4_edges/bin/CMakeFiles /home/dan/Desktop/4650/assignment4_edges/bin/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/histograms/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/assignment4_edges/bin/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -102,17 +102,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Histogram
+# Target rules for targets named Edges
 
 # Build rule for target.
-Histogram: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Histogram
-.PHONY : Histogram
+Edges: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Edges
+.PHONY : Edges
 
 # fast build rule for target.
-Histogram/fast:
-	$(MAKE) -f src/CMakeFiles/Histogram.dir/build.make src/CMakeFiles/Histogram.dir/build
-.PHONY : Histogram/fast
+Edges/fast:
+	$(MAKE) -f src/CMakeFiles/Edges.dir/build.make src/CMakeFiles/Edges.dir/build
+.PHONY : Edges/fast
 
 # Help Target
 help:
@@ -122,7 +122,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Histogram"
+	@echo "... Edges"
 .PHONY : help
 
 

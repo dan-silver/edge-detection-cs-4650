@@ -1,4 +1,4 @@
-# Install script for directory: /home/dan/Desktop/4650/histograms/src
+# Install script for directory: /home/dan/Desktop/4650/assignment4_edges/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

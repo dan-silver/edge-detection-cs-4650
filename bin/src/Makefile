@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dan/Desktop/4650/histograms
+CMAKE_SOURCE_DIR = /home/dan/Desktop/4650/assignment4_edges
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dan/Desktop/4650/histograms/bin
+CMAKE_BINARY_DIR = /home/dan/Desktop/4650/assignment4_edges/bin
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dan/Desktop/4650/histograms/bin && $(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/histograms/bin/CMakeFiles /home/dan/Desktop/4650/histograms/bin/src/CMakeFiles/progress.marks
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/histograms/bin/CMakeFiles 0
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/assignment4_edges/bin/CMakeFiles /home/dan/Desktop/4650/assignment4_edges/bin/src/CMakeFiles/progress.marks
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dan/Desktop/4650/assignment4_edges/bin/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,56 +88,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dan/Desktop/4650/histograms/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/Histogram.dir/rule:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/Histogram.dir/rule
-.PHONY : src/CMakeFiles/Histogram.dir/rule
+src/CMakeFiles/Edges.dir/rule:
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/Edges.dir/rule
+.PHONY : src/CMakeFiles/Edges.dir/rule
 
 # Convenience name for target.
-Histogram: src/CMakeFiles/Histogram.dir/rule
-.PHONY : Histogram
+Edges: src/CMakeFiles/Edges.dir/rule
+.PHONY : Edges
 
 # fast build rule for target.
-Histogram/fast:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f src/CMakeFiles/Histogram.dir/build.make src/CMakeFiles/Histogram.dir/build
-.PHONY : Histogram/fast
+Edges/fast:
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f src/CMakeFiles/Edges.dir/build.make src/CMakeFiles/Edges.dir/build
+.PHONY : Edges/fast
 
-Histogram.o: Histogram.cxx.o
-.PHONY : Histogram.o
+Edges.o: Edges.cxx.o
+.PHONY : Edges.o
 
 # target to build an object file
-Histogram.cxx.o:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f src/CMakeFiles/Histogram.dir/build.make src/CMakeFiles/Histogram.dir/Histogram.cxx.o
-.PHONY : Histogram.cxx.o
+Edges.cxx.o:
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f src/CMakeFiles/Edges.dir/build.make src/CMakeFiles/Edges.dir/Edges.cxx.o
+.PHONY : Edges.cxx.o
 
-Histogram.i: Histogram.cxx.i
-.PHONY : Histogram.i
+Edges.i: Edges.cxx.i
+.PHONY : Edges.i
 
 # target to preprocess a source file
-Histogram.cxx.i:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f src/CMakeFiles/Histogram.dir/build.make src/CMakeFiles/Histogram.dir/Histogram.cxx.i
-.PHONY : Histogram.cxx.i
+Edges.cxx.i:
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f src/CMakeFiles/Edges.dir/build.make src/CMakeFiles/Edges.dir/Edges.cxx.i
+.PHONY : Edges.cxx.i
 
-Histogram.s: Histogram.cxx.s
-.PHONY : Histogram.s
+Edges.s: Edges.cxx.s
+.PHONY : Edges.s
 
 # target to generate assembly for a file
-Histogram.cxx.s:
-	cd /home/dan/Desktop/4650/histograms/bin && $(MAKE) -f src/CMakeFiles/Histogram.dir/build.make src/CMakeFiles/Histogram.dir/Histogram.cxx.s
-.PHONY : Histogram.cxx.s
+Edges.cxx.s:
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(MAKE) -f src/CMakeFiles/Edges.dir/build.make src/CMakeFiles/Edges.dir/Edges.cxx.s
+.PHONY : Edges.cxx.s
 
 # Help Target
 help:
@@ -145,12 +145,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Histogram"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Histogram.o"
-	@echo "... Histogram.i"
-	@echo "... Histogram.s"
+	@echo "... Edges"
+	@echo "... Edges.o"
+	@echo "... Edges.i"
+	@echo "... Edges.s"
 .PHONY : help
 
 
@@ -162,6 +162,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dan/Desktop/4650/histograms/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dan/Desktop/4650/assignment4_edges/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

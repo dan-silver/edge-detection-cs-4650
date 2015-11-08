@@ -1,3 +1,7 @@
+
+// execute with ./linux/Edges ../images/Img1.png
+// 
+
 #include <iostream> //
 #include "utilz.hxx" //contains the rgb2gray function
 

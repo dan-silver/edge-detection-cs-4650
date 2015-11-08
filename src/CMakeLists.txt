@@ -243,6 +243,6 @@ endif()
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CIMG_CFLAGS}")
 INCLUDE_DIRECTORIES( ${CIMG_H_PATH} )
 
-add_executable (Histogram Histogram.cxx ${PROJECT_SOURCE_DIR}/header/utilz.hxx)
+add_executable (Edges Edges.cxx ${PROJECT_SOURCE_DIR}/header/utilz.hxx)
 
-target_link_libraries(Histogram ${SYSTEM_LIBS} )
+target_link_libraries(Edges ${SYSTEM_LIBS} )

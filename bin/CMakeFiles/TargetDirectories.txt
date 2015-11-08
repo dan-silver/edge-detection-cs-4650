@@ -1,1 +1,1 @@
-/home/dan/Desktop/4650/histograms/bin/src/CMakeFiles/Histogram.dir
+/home/dan/Desktop/4650/assignment4_edges/bin/src/CMakeFiles/Edges.dir

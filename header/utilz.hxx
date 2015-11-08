@@ -8,10 +8,11 @@
 #include <sstream>
 #include <math.h>       /* log10 */
 
-using namespace std;
-
 void detect_edges(cimg_library::CImg<> input_image) {
-        
+        int G_X[3][3] = {
+          {-1, 0, 1},
+          {-2, 0, 2},
+          {-1, 0, 1}};
 }
 
 #endif
