@@ -46,7 +46,7 @@ cimg_library::CImg<> apply_sobel_filter(cimg_library::CImg<> image, float filter
                     filter[2][2] * (float) image(r + 1, c + 1, 0, channel);
 
 
-                //scalle the value to [0, 255];
+                //scale the value to [0, 255];
 
                 value = (value + 255) / 510 * 255;
 
@@ -69,8 +69,6 @@ void detect_edges(cimg_library::CImg<> input_image) {
 
     int padding = 2;
     cimg_library::CImg<> padded_image = add_padding_to_image(input_image, padding);
-
-    padded_image.display("padded image");
 
     /** define sobel filters **/
     float G_x[3][3] = {
