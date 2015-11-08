@@ -9,7 +9,7 @@
 #include <math.h>
 
 
-// helper function that adds n pixels to the border around the image
+// helper function that adds pixels to the border around the image
 cimg_library::CImg<> add_padding_to_image(cimg_library::CImg<> image, int pixels) {
     cimg_library::CImg<> padded_image(image.width() + 2*pixels, image.height() + 2*pixels, 1, image.spectrum());
     for (int channel = 0; channel < image.spectrum(); channel++) {
@@ -24,15 +24,15 @@ cimg_library::CImg<> add_padding_to_image(cimg_library::CImg<> image, int pixels
 }
 
 //applies the given filter to the image (1st param) inside the padding and produces an output image
-void apply_sobel_filter(cimg_library::CImg<> image, cimg_library::CImg<> output, float filter[3][3]) {
-    //loop through each pixel in the input image
-    int padding = 2;
+cimg_library::CImg<> apply_sobel_filter(cimg_library::CImg<> image, float filter[3][3], int padding) {
+
+    cimg_library::CImg<> output(image.width(), image.height(), 1, image.spectrum());
 
     for (int channel = 0; channel < image.spectrum(); channel++) {
 
         //loop through each pixel INSIDE the padding of 2px
-        for (int r = padding ; r < image.height() + padding; r++) {
-            for (int c = padding ; c < image.width() + padding; c++) {
+        for (int r = padding ; r < image.height() - padding; r++) {
+            for (int c = padding ; c < image.width() - padding; c++) {
 
                 float value =
                     filter[0][0] * (float) image(r - 1, c - 1, 0, channel) +
@@ -50,7 +50,7 @@ void apply_sobel_filter(cimg_library::CImg<> image, cimg_library::CImg<> output,
 
                 value = (value + 255) / 510 * 255;
 
-                output(r, c, 0, channel) = value;
+                output(r, c, 0, channel) = (int) value;
                 // std::cout <<  << std::endl;
                 // std::cout << value << " : " << image(r, c, 0, 0, channel) << std::endl;
                 // std::cout << (filter[0][0] * (float) image(r - 1, c - 1, 0, channel)) << std::endl;
@@ -61,6 +61,7 @@ void apply_sobel_filter(cimg_library::CImg<> image, cimg_library::CImg<> output,
             }
         }
     }
+    return output;
 }
 
 void detect_edges(cimg_library::CImg<> input_image) {
@@ -82,22 +83,13 @@ void detect_edges(cimg_library::CImg<> input_image) {
       { 0,     0,     0},
       {-0.25, -0.50, -0.25}};
 
-    /** Define gradient images (Ix and Iy ) **/
-    cimg_library::CImg<> Ix, Iy;
-
-    Ix.assign(padded_image.width(), padded_image.height(), 1, padded_image.spectrum());
-    Ix.fill(255);
-
-    Iy.assign(padded_image.width(), padded_image.height(), 1, padded_image.spectrum());
-    Iy.fill(255);
-
 
     // /** Apply sobel filters to image **/
-    // apply_sobel_filter(padded_image, Ix, G_x);
-    // apply_sobel_filter(padded_image, Iy, G_y);
+    cimg_library::CImg<> Ix = apply_sobel_filter(padded_image, G_x, padding);
+    cimg_library::CImg<> Iy = apply_sobel_filter(padded_image, G_y, padding);
 
-    // Ix.display("Ix");
-    // Iy.display("Iy");
+    Ix.display("Ix");
+    Iy.display("Iy");
 
 }
 
