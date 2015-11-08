@@ -30,7 +30,7 @@ cimg_library::CImg<> apply_sobel_filter(cimg_library::CImg<> image, float filter
 
     for (int channel = 0; channel < image.spectrum(); channel++) {
 
-        //loop through each pixel INSIDE the padding of 2px
+        //loop through each pixel INSIDE the padding
         for (int r = padding ; r < image.height() - padding; r++) {
             for (int c = padding ; c < image.width() - padding; c++) {
 
@@ -51,17 +51,40 @@ cimg_library::CImg<> apply_sobel_filter(cimg_library::CImg<> image, float filter
                 value = (value + 255) / 510 * 255;
 
                 output(r, c, 0, channel) = (int) value;
-                // std::cout <<  << std::endl;
-                // std::cout << value << " : " << image(r, c, 0, 0, channel) << std::endl;
-                // std::cout << (filter[0][0] * (float) image(r - 1, c - 1, 0, channel)) << std::endl;
-                if (value != 0.0) {
-                    std::cout << value << std::endl;
-                    std::cout << output(r, c, 0, channel) << std::endl;
-                }
             }
         }
     }
     return output;
+}
+
+
+// Computes the magnitude with magnitude = sqrt(Ix^2 + Iy^2). For color images, each channel is
+// computed individually so the resulting image can be displayed as RGB
+
+cimg_library::CImg<> compute_magnitude(cimg_library::CImg<> Ix, cimg_library::CImg<> Iy) {
+    cimg_library::CImg<> output(Ix.width(), Ix.height(), 1, Ix.spectrum());
+    for (int channel = 0; channel < Ix.spectrum(); channel++) {
+        for (int r = 0 ; r < Ix.height(); r++) {
+            for (int c = 0 ; c < Ix.width(); c++) {
+                int value = sqrt( pow(Ix(r, c, channel), 2) + pow(Iy(r, c, channel), 2));
+
+                //scale the value from [0, 360.6] to [0, 255]
+                value = 255*(value/360.6);
+
+                output(r, c, channel) = value;
+
+
+            }
+        }
+    }
+    return output;
+}
+
+
+
+// color LUT using HSV to RGB conversion where H = theta (the angle from (b) properly transformed), S = 1.0, V= 1.0
+cimg_library::CImg<> compute_orientation(cimg_library::CImg<> Ix, cimg_library::CImg<> Iy) {
+
 }
 
 void detect_edges(cimg_library::CImg<> input_image) {
@@ -74,12 +97,14 @@ void detect_edges(cimg_library::CImg<> input_image) {
     float G_x[3][3] = {
       {0.25, 0, -0.25},
       {0.50, 0, -0.50},
-      {0.25, 0, -0.25}};
+      {0.25, 0, -0.25}
+    };
 
     float G_y[3][3] = {
       { 0.25,  0.50,  0.25},
       { 0,     0,     0},
-      {-0.25, -0.50, -0.25}};
+      {-0.25, -0.50, -0.25}
+    };
 
 
     // /** Apply sobel filters to image **/
@@ -88,6 +113,16 @@ void detect_edges(cimg_library::CImg<> input_image) {
 
     Ix.display("Ix");
     Iy.display("Iy");
+
+
+    // Calculate the edge magnitude
+    cimg_library::CImg<> magnitude = compute_magnitude(Ix, Iy);
+    magnitude.display("magnitude");
+
+    //For grayscale images, compute the orientation
+    if (input_image.spectrum() == 1)
+        compute_orientation(Ix, Iy);
+
 
 }
 
