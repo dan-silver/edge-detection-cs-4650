@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[]) {
 
-    cimg_library::CImg<> input_image, equalized_image, log10_image;
+    cimg_library::CImg<> input_image;
 
     //print out the usage if the user enters the wrong number of cmd inputs
     // arg count of 4 is allowed only if the command starts with the -invert flag
